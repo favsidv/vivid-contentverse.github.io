@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ArticleCard from "@/components/ArticleCard";
-import { Input } from "@/components/ui/input";
-import { Search, X } from "lucide-react";
 
 const Articles = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isSearchFocused, setIsSearchFocused] = useState(false);
-  
-  // Sample article data - just keeping one article
+  // Sample article data - using the same one as homepage
   const articleData = {
-    id: "1",
-    title: "The Evolution of Minimalist Design in Modern Digital Spaces",
-    excerpt: "Exploring how less became more in the digital landscape and why simplicity continues to drive innovation in user experience and interface design.",
-    coverImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
-    category: "Design",
-    author: "Alex Johnson",
-    date: "April 12, 2023",
-    readTime: "8 min read",
-  };
-
-  // Function to clear search
-  const clearSearch = () => {
-    setSearchQuery("");
+    id: "2",
+    title: "The Psychology Behind Effective Content Creation",
+    excerpt: "Understanding how our brains process information can help create more engaging and memorable content.",
+    coverImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    category: "Content",
+    author: "Mia Roberts",
+    date: "March 24, 2023",
+    readTime: "6 min read",
   };
 
   // Handle scroll to top
@@ -45,35 +36,7 @@ const Articles = () => {
             </p>
           </div>
           
-          {/* Search */}
-          <div className="mb-12">
-            <div className="flex flex-col md:flex-row gap-4 max-w-4xl mx-auto">
-              <div className="relative flex-grow">
-                <Input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onFocus={() => setIsSearchFocused(true)}
-                  onBlur={() => setIsSearchFocused(false)}
-                  className={`pl-10 transition-all duration-300 ${
-                    isSearchFocused ? "ring-2 ring-primary/50" : ""
-                  }`}
-                />
-                <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                {searchQuery && (
-                  <button
-                    onClick={clearSearch}
-                    className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                )}
-              </div>
-            </div>
-          </div>
-          
-          {/* Featured Article - Now the only article */}
+          {/* Single Article */}
           <div className="mb-12 max-w-4xl mx-auto">
             <ArticleCard
               id={articleData.id}
