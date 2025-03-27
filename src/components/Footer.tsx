@@ -62,11 +62,6 @@ const Footer = () => {
                   Videos
                 </Link>
               </li>
-              <li>
-                <Link to="/gallery" className="text-gray-600 hover:text-primary transition-colors">
-                  Gallery
-                </Link>
-              </li>
             </ul>
           </div>
           

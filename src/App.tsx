@@ -9,7 +9,6 @@ import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import Videos from "./pages/Videos";
 import Video from "./pages/Video";
-import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,7 +25,6 @@ const App = () => (
           <Route path="/article/:id" element={<Article />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/video/:id" element={<Video />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
